@@ -14,7 +14,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var tableView: UITableView!
     
     var businesses: [Business]!
-    //var searchBar: UISearchBar
+    var searchBar: UISearchBar?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
        
         
         searchBar = UISearchBar()
-        searchBar.sizeToFit()
+        searchBar?.sizeToFit()
         
         navigationItem.titleView = searchBar
         
