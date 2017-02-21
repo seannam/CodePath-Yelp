@@ -41,10 +41,10 @@
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PGH-fW-58e">
-                                                    <rect key="frame" x="81" y="30" width="85" height="20"/>
+                                                    <rect key="frame" x="81" y="30" width="85" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="85" id="eF1-ZU-mk2"/>
-                                                        <constraint firstAttribute="height" constant="20" id="wN5-Dv-XtS"/>
+                                                        <constraint firstAttribute="height" constant="15" id="wN5-Dv-XtS"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="544 Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zge-8r-zqD">

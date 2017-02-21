@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
+class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate  {
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -25,12 +25,12 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120
        
-        
         searchBar = UISearchBar()
+        searchBar?.delegate = self
         searchBar?.sizeToFit()
+        //searchBar?.showsCancelButton = true
         
         navigationItem.titleView = searchBar
-        
         
         Business.searchWithTerm(term: "Thai", completion: { (businesses: [Business]?, error: Error?) -> Void in
             
@@ -43,9 +43,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
                     print(business.address!)
                 }
             }
-            
-            }
-        )
+        })
         
         /* Example of Yelp search with more search options specified
          Business.searchWithTerm("Restaurants", sort: .Distance, categories: ["asianfusion", "burgers"], deals: true) { (businesses: [Business]!, error: NSError!) -> Void in
@@ -64,6 +62,13 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        // make true to hide searchbar as you scroll down
+        navigationController?.hidesBarsOnSwipe = false
+    }
+    
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BusinessCell", for: indexPath as IndexPath) as! BusinessCell
         
@@ -80,8 +85,27 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         }
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        Business.searchWithTerm(term: searchText, completion: { (businesses: [Business]?, error: Error?) -> Void in
+            
+            self.businesses = businesses
+            self.tableView.reloadData()
+
+        })
+    }
     
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        self.searchBar?.showsCancelButton = true
+        print("searchBarTextDidEndEditing")
+    }
     
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        print("searchBarCancelButtonClicked")
+        
+        self.searchBar?.showsCancelButton = false
+        self.searchBar?.text = ""
+        self.searchBar?.resignFirstResponder()
+    }
     /*
      // MARK: - Navigation
      
