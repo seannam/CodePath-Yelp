@@ -299,6 +299,7 @@
         <!--Navigation Controller-->
         <scene sceneID="21o-7t-372">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JTz-fy-lRS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bRH-oe-DgD" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8o4-c6-2J0">
@@ -310,7 +311,6 @@
                         <segue destination="xSc-uT-adV" kind="relationship" relationship="rootViewController" id="mGo-Yi-d9C"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JTz-fy-lRS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4099" y="356"/>
         </scene>
@@ -330,11 +330,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kzp-rW-WxC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2782.5" y="1030.9859154929577"/>
+            <point key="canvasLocation" x="2420" y="1088"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="D5r-b4-zfF"/>
-        <segue reference="Hvs-cH-JQL"/>
+        <segue reference="mGo-Yi-d9C"/>
+        <segue reference="3Hs-nd-ZJc"/>
     </inferredMetricsTieBreakers>
 </document>
