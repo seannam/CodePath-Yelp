@@ -7,12 +7,30 @@
 //
 
 import UIKit
+import AFNetworking
 
 class BusinessDetailsViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var ratingImageView: UIImageView!
+    @IBOutlet weak var categoriesLabel: UILabel!
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    
+    var name: String?
+    var distance: String?
+    var ratingsImageURL: URL?
+    var categories: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        titleLabel.text = name
+        distanceLabel.text = distance
+        categoriesLabel.text = categories
+        if let ratingsImageUrl = ratingsImageURL {
+            self.ratingImageView.setImageWith(ratingsImageUrl)
+        }
         // Do any additional setup after loading the view.
     }
 

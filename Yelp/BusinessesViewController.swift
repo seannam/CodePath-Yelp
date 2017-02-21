@@ -116,15 +116,25 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
         if segue.identifier == "detailsSegue" {
+            let backItem = UIBarButtonItem()
+            backItem.title = "Search"
+            navigationItem.backBarButtonItem = backItem
+            
             let cell = sender as! BusinessCell
             
-            let detailsViewController = segue.destination as! BusinessDetailsViewController
+            let indexPath = tableView.indexPath(for: cell)
+            let business = self.businesses![(indexPath?.row)!]
             
-            
+//            let detailsViewController = segue.destination as! BusinessDetailsViewController
+//            
+//            detailsViewController.name = business.name
+//            detailsViewController.distance = business.distance
+//            detailsViewController.categories = business.categories
+//            detailsViewController.ratingsImageURL = business.ratingImageURL
         }
         
-        if segue.identifier == "mapsSegue" {
-            
+        else if segue.identifier == "mapsSegue" {
+            print("in maps view")
         }
      }
     
