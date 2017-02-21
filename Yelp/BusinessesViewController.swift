@@ -108,17 +108,30 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         })
         
     }
-        /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
+        if segue.identifier == "detailsSegue" {
+            let cell = sender as! BusinessCell
+            
+            let detailsViewController = segue.destination as! BusinessDetailsViewController
+            
+            
+        }
+        
+        if segue.identifier == "mapsSegue" {
+            
+        }
      }
-     */
+    
     
 }
+    // MARK: - Extensions
+
 extension BusinessesViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
