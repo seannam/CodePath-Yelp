@@ -183,13 +183,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$$" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEg-eF-i2B">
                                 <rect key="frame" x="296" y="103" width="16" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sushi, Asian, Fusion" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jr-We-e8K">
                                 <rect key="frame" x="8" y="149" width="113" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GAx-P9-gSi">
@@ -202,7 +202,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.73 mi" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1O-33-hp3">
                                 <rect key="frame" x="270" y="80" width="42" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call now:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mz-aZ-yk8">
+                                <rect key="frame" x="8" y="428" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -223,6 +229,7 @@
                             <constraint firstItem="GAx-P9-gSi" firstAttribute="top" secondItem="bZy-bH-LBr" secondAttribute="bottom" constant="4" id="guS-IB-4mo"/>
                             <constraint firstItem="J1O-33-hp3" firstAttribute="top" secondItem="OTC-AK-GK2" secondAttribute="bottom" constant="16" id="h7f-IG-wJ8"/>
                             <constraint firstItem="PzD-bB-BFI" firstAttribute="top" secondItem="Qe5-gs-6qC" secondAttribute="bottom" constant="4" id="hhU-6W-Cyh"/>
+                            <constraint firstItem="8mz-aZ-yk8" firstAttribute="leading" secondItem="LpK-9q-BGN" secondAttribute="leading" constant="8" id="kvs-yJ-Zv8"/>
                             <constraint firstItem="bZy-bH-LBr" firstAttribute="top" secondItem="OTC-AK-GK2" secondAttribute="bottom" constant="8" id="oNn-L4-fc8"/>
                             <constraint firstAttribute="trailing" secondItem="FEg-eF-i2B" secondAttribute="trailing" constant="8" id="orw-c8-Nsr"/>
                             <constraint firstItem="GAx-P9-gSi" firstAttribute="top" secondItem="bZy-bH-LBr" secondAttribute="bottom" constant="4" id="qOm-qv-r22"/>
@@ -230,13 +237,17 @@
                             <constraint firstAttribute="trailing" secondItem="Qe5-gs-6qC" secondAttribute="trailing" id="rof-v9-Nbk"/>
                             <constraint firstAttribute="trailing" secondItem="Jq3-9B-Bp3" secondAttribute="trailing" id="ttd-oS-zuA"/>
                             <constraint firstItem="FEg-eF-i2B" firstAttribute="top" secondItem="J1O-33-hp3" secondAttribute="bottom" constant="8" id="uEC-cW-MO9"/>
+                            <constraint firstItem="8mz-aZ-yk8" firstAttribute="top" secondItem="PzD-bB-BFI" secondAttribute="bottom" constant="8" id="uVH-7U-USA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6qp-WX-rcL"/>
                     <connections>
+                        <outlet property="addressLabel" destination="PzD-bB-BFI" id="TkE-Me-4qU"/>
                         <outlet property="backgroundImageView" destination="Jq3-9B-Bp3" id="Ng6-nd-296"/>
                         <outlet property="categoriesLabel" destination="1jr-We-e8K" id="odT-8y-1oO"/>
+                        <outlet property="detailedMapView" destination="Qe5-gs-6qC" id="t4w-Hq-kmJ"/>
                         <outlet property="distanceLabel" destination="J1O-33-hp3" id="YBV-DP-bEh"/>
+                        <outlet property="phoneLabel" destination="8mz-aZ-yk8" id="ggg-cy-74l"/>
                         <outlet property="ratingImageView" destination="GAx-P9-gSi" id="mNt-kW-JhI"/>
                         <outlet property="titleLabel" destination="bZy-bH-LBr" id="sFR-Kn-AEZ"/>
                     </connections>

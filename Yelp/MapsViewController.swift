@@ -70,6 +70,7 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate {
     */
 
 }
+
 extension MapsViewController: MKMapViewDelegate {
     // add an Annotation with a coordinate: CLLocationCoordinate2D
     func addAnnotationAtCoordinate(coordinate: CLLocationCoordinate2D) {

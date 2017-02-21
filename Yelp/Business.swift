@@ -17,6 +17,15 @@ class Business: NSObject {
     let ratingImageURL: URL?
     let reviewCount: NSNumber?
     
+    let phone: String?
+    let snippetURL: URL?
+    
+    let longitude: Double?
+    let latitude: Double?
+    
+    let latitudeDelta: Double?
+    let longitudeDelta: Double?
+    
     init(dictionary: NSDictionary) {
         name = dictionary["name"] as? String
         
@@ -73,6 +82,49 @@ class Business: NSObject {
         }
         
         reviewCount = dictionary["review_count"] as? NSNumber
+        
+        let phoneNumber = dictionary["display_phone"] as? String
+        if phoneNumber != nil {
+            phone = phoneNumber
+        } else {
+            phone = nil
+        }
+        
+        
+        let snippetImageURLString = dictionary["snippet_image_url"] as? String
+        if snippetImageURLString != nil {
+            snippetURL = URL(string: snippetImageURLString!)
+        } else {
+            snippetURL = nil
+        }
+        
+        let lat = dictionary["region.center.latitude"] as? Double
+        if lat != nil {
+            latitude = lat
+        } else {
+            latitude = nil
+        }
+        
+        let lon = dictionary["region.center.longitude"] as? Double
+        if lon != nil {
+            longitude = lon
+        } else {
+            longitude = nil
+        }
+        
+        let latDelta = dictionary["region.span.latitude_delta"] as? Double
+        if latDelta != nil {
+            latitudeDelta = latDelta
+        } else {
+            latitudeDelta = nil
+        }
+        
+        let lonDelta = dictionary["region.span.longitude_delta"] as? Double
+        if lonDelta != nil {
+            longitudeDelta = lonDelta
+        } else {
+            longitudeDelta = nil
+        }
     }
     
     class func businesses(array: [NSDictionary]) -> [Business] {

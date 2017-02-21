@@ -131,7 +131,14 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
             detailsViewController.name = business.name
             detailsViewController.distance = business.distance
             detailsViewController.categories = business.categories
+            detailsViewController.address = business.address
             detailsViewController.ratingsImageURL = business.ratingImageURL
+            detailsViewController.backgroundImageUrl = business.imageURL
+            detailsViewController.phone = business.phone
+            detailsViewController.latitude = business.latitude
+            detailsViewController.longitude = business.longitude
+            detailsViewController.latitudeDelta = business.latitudeDelta
+            detailsViewController.longitudeDelta = business.longitudeDelta
         }
         
         else if segue.identifier == "mapsSegue" {
