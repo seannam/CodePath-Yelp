@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate  {
+class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -84,29 +84,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
             return 0
         }
     }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        Business.searchWithTerm(term: searchText, completion: { (businesses: [Business]?, error: Error?) -> Void in
-            
-            self.businesses = businesses
-            self.tableView.reloadData()
-
-        })
-    }
-    
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        self.searchBar?.showsCancelButton = true
-        print("searchBarTextDidEndEditing")
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        print("searchBarCancelButtonClicked")
-        
-        self.searchBar?.showsCancelButton = false
-        self.searchBar?.text = ""
-        self.searchBar?.resignFirstResponder()
-    }
-    /*
+        /*
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -116,4 +94,31 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
      }
      */
     
+}
+extension BusinessesViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        Business.searchWithTerm(term: searchText, completion: { (businesses: [Business]?, error: Error?) -> Void in
+            
+            self.businesses = businesses
+            self.tableView.reloadData()
+            
+        })
+    }
+    
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        searchBar.setShowsCancelButton(true, animated: true)
+        return true
+    }
+    
+    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+        searchBar.setShowsCancelButton(false, animated: true)
+        return true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+            searchBar.text = ""
+            searchBar.resignFirstResponder()
+    }
+
 }
