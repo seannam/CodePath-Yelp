@@ -23,6 +23,26 @@ The following **additional** features are implemented:
 
 - [x] Added a cancel button to the search bar
 - [x] Keyboard disappears when you press the search button on the keyboard
+- [ ] Search by city or location
+- [ ] Filter by category
+- [ ] Filter by rating
+- [ ]
+- [ ] Uses current location to get relevant search results
+- [ ] Explore a restaurant's menu from within the app
+- [ ] Call a business from within the app
+- [ ] Read a review highlight from within the app
+- [ ] Tap to get directions to a business
+- [ ] Map all search results; tap a pin on the map to segue to business details view
+- [ ] Multiple navigation controllers with Tab Bar
+- [ ] List of categories to search from (static table view controller)
+- [ ] Pull-to-refresh (useful if your location has changed!)
+- [ ] Sort by distance or rating
+- [ ] Filter by multiple distance levels
+- [ ] Search bars are connected to Yelp Search API (not limited to searching table view cells; can search for any local business)
+- [ ] Search terms and filters persist between relaunches, using NSUserDefaults
+- [ ] App Icon resembles the real Yelp app
+- [ ] Launch screen resembles the real Yelp app
+- [ ] Navigation bars, buttons, icons, and theme resembles the real Yelp app
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
